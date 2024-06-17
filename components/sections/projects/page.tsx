@@ -64,7 +64,7 @@ const data = [
   {
     name: "Github-Issues-Bot",
     description:
-      "A bot which notifies members in a discord server when a new issue is created in a github repository",
+      "A bot which notifies members in a discord server when a new issue is created in a github repository, allowing for oversight over repo",
     tags: ["Python", "Discord.py", "GitHub API"],
     links: [
       {
