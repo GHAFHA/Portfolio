@@ -1,3 +1,13 @@
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+import Link from "next/link";
+
 const data = [
   {
     name: "Kuiper",
@@ -76,5 +86,40 @@ const data = [
 ];
 
 export const Projects = () => {
-  return <section>Projects</section>;
+  return (
+    <div>
+      <div>
+        <h2>Projects</h2>
+      </div>
+      <ol className="group/list">
+        {data.map((item, index) => (
+          <li key={index}>
+            <Card className="">
+              <CardHeader>
+                <CardTitle>{item.name}</CardTitle>
+                <CardContent>
+                  <p>{item.description}</p>
+                  <div>
+                    {item.links.map((link, linkIndex) => (
+                      <Link key={linkIndex} href={link.url}>
+                        {" "}
+                        {link.name}
+                      </Link>
+                    ))}
+                  </div>
+                  <div>
+                    {item.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="tag">
+                        {tag}{" "}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </CardHeader>
+            </Card>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
 };

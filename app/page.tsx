@@ -5,8 +5,10 @@ import { Projects } from "@/components/sections/projects/page";
 
 export default function Home() {
   return (
-    <section>
+    <div>
+      <About />
       <Experience />
-    </section>
+      <Projects />
+    </div>
   );
 }

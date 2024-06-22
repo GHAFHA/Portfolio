@@ -66,14 +66,14 @@ const data = [
 
 export const Experience = () => {
   return (
-    <div>
+    <div className="flex flex-col mb-12" id="experience">
       <div>
-        <h2 className="text-xl"> Experience </h2>
+        <h2 className="text-sm tracking-wider"> Experience </h2>
       </div>
       <ol className="group/list">
         {data.map((item, index) => (
           <li key={index}>
-            <Card>
+            <Card className="">
               <CardHeader>
                 <CardTitle>{item.company}</CardTitle>
                 <CardDescription>
@@ -94,7 +94,7 @@ export const Experience = () => {
                 <div>
                   {item.tags.map((tag, tagIndex) => (
                     <span key={tagIndex} className="tag">
-                      {tag}
+                      {tag}{" "}
                     </span>
                   ))}
                 </div>
