@@ -10,9 +10,9 @@ const Link = ({ children, href }: { children: any; href: string }) => {
 
 export const About = () => {
   return (
-    <section>
-      <div>
-        <h2>About</h2>
+    <section className="mb-12">
+      <div className="">
+        <h2 className="text-3xl tracking-wider mb-2">About</h2>
       </div>
       <div className="text-sm">
         <p className="mb-4">

@@ -68,38 +68,42 @@ export const Experience = () => {
   return (
     <div className="flex flex-col mb-12" id="experience">
       <div>
-        <h2 className="text-sm tracking-wider"> Experience </h2>
+        <h2 className="text-3xl tracking-wider mb-4"> Experience </h2>
       </div>
       <ol className="group/list">
         {data.map((item, index) => (
-          <li key={index}>
-            <Card className="">
-              <CardHeader>
-                <CardTitle>{item.company}</CardTitle>
-                <CardDescription>
-                  {Array.isArray(item.role) ? item.role.join(", ") : item.role}{" "}
-                  | {item.date}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>{item.description}</p>
-                <div>
-                  {item.links.map((link, linkIndex) => (
-                    <Link key={linkIndex} href={link.url}>
-                      {" "}
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
-                <div>
-                  {item.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="tag">
-                      {tag}{" "}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <li key={index} className="">
+            <div className="mb-2 p-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle>{item.company}</CardTitle>
+                  <CardDescription>
+                    {Array.isArray(item.role)
+                      ? item.role.join(", ")
+                      : item.role}{" "}
+                    | {item.date}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>{item.description}</p>
+                  <div>
+                    {item.links.map((link, linkIndex) => (
+                      <Link key={linkIndex} href={link.url}>
+                        {" "}
+                        {link.name}
+                      </Link>
+                    ))}
+                  </div>
+                  <div>
+                    {item.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="tag">
+                        {tag}{" "}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </li>
         ))}
       </ol>

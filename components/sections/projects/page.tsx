@@ -89,7 +89,7 @@ export const Projects = () => {
   return (
     <div>
       <div>
-        <h2>Projects</h2>
+        <h2 className="text-3xl tracking-wider mb-4">Projects</h2>
       </div>
       <ol className="group/list">
         {data.map((item, index) => (
